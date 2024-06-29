@@ -4,7 +4,7 @@ Requirements
 ------------
 
 - `CMake` >= 3.25
-- `Qt` >= 6.7.2
+- `Qt` >= 6.7.x
 
 
 Build
