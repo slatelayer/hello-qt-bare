@@ -1,0 +1,12 @@
+
+**/node_modules
+**/bare-build
+**/bare-libs
+**/bare/bundle.js.h
+**/*.d
+**/build
+**/CMakeFiles
+**/CMakeCache.txt
+**/CmakeLists.txt*
+**/package-lock.json
+x
