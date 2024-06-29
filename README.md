@@ -3,10 +3,8 @@
 Requirements
 ------------
 
-Make sure you have installed on your system:
-
-- `CMake` >= 3.25.
-- `Qt` >= 6.7.2.
+- `CMake` >= 3.25
+- `Qt` >= 6.7.2
 
 
 Build
@@ -19,7 +17,7 @@ git submodule update --init --recursive
 ```
 
 > [!NOTE]
-> From now on, you should run `npx bare-dev vendor sync` after updating `bare` git submodule.
+> From now on, you should run `bare-dev vendor sync` after updating `bare` git submodule.
 
 Now install all the dependencies running `npm install` or your package manager of preference.
 
@@ -34,4 +32,5 @@ Run
 ---
 
 Only tested on Mac so far...
+
 `./x` is a symlink to `./build/demo.app/Contents/MacOS/demo`.
