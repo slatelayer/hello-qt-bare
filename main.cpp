@@ -63,8 +63,6 @@ class Core : public QObject {
     Q_INVOKABLE
     void send(const QString& qstr) {
       _queue_job([qstr](){
-        qDebug() << "job";
-
         js_env_t* env = core.env;
 
         js_value_t* global;

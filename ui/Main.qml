@@ -1,41 +1,70 @@
 
 import QtQuick
+import QtQuick.Controls
 
 import "core.mjs" as C
 
 
 Window {
     id: window
-
+    color: "#050505"
     visibility: Window.FullScreen
     visible: true
 
-    /*
-    Timer {
-        interval: 1000; running: true; repeat: true
-        onTriggered: function() {
+    Label {
+        id: title
+        text: ""
+        font.pointSize: 48
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+    }
 
+    Button {
+        id: clicker
+        text: "Click"
+        visible: false
+        onClicked: _ => {
             const msg = {
-                t: "ping",
-                d: Date.now(),
-                msg: "PING!"
+                typ: "click"
             }
             core.send(C.encode(msg))
         }
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: title.bottom
+        anchors.topMargin: 20
     }
-    */
 
-    //Component.onCompleted: function() {}
+    Label {
+        id: beat
+        color: "#666666"
+        font.pointSize: 24
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+    }
 
     Connections {
         target: core
         
         function onRecv (data) {
-            const { t, d, m } = C.decode(data)
+            const { typ, ts, msg } = C.decode(data)
             
-            switch(t){
+            switch(typ){
+            case 'color':
+                window.color = msg.color
+                return
+
+            case 'title':
+                title.text = msg.title
+                title.color = msg.color
+                return
+
+            case 'showButton':
+                clicker.visible = true
+                return
+
             case 'heartbeat':
-                console.log(`beat ${d}`)
+                beat.text = ts
+                return
             }
         }
     }
