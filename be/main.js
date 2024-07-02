@@ -1,12 +1,11 @@
 
-require('./runtime.js')
-const { setTimeout, setInterval } = require('bare-timers')
+import './runtime.js'
+import { setTimeout, setInterval } from 'bare-timers'
+
+import { encode, decode } from './encoding'
+
+
 const sleep = ms => new Promise(a=>setTimeout(a, ms))
-
-// XXX can't get esm to work for some reason; tried every way I could think of!
-//import {encode, decode} from './encoding'
-const { encode, decode } = require('./encoding')
-
 
 const green = "#BADE5B"
 

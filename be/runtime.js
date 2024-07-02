@@ -1,6 +1,6 @@
 
-const Console = require('bare-console')
-const process = require('bare-process')
+import Console from 'bare-console'
+import process from 'bare-process'
 
 // globals
 
