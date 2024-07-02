@@ -1,5 +1,5 @@
 
-import './runtime.js'
+import './runtime'
 import { setTimeout, setInterval } from 'bare-timers'
 
 import { encode, decode } from './encoding'
