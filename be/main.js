@@ -1,5 +1,5 @@
 
-
+require('./runtime.js')
 const { setTimeout, setInterval } = require('bare-timers')
 const sleep = ms => new Promise(a=>setTimeout(a, ms))
 
@@ -21,6 +21,8 @@ core.recv = function(data) {
 }
 
 core.ready()
+
+console.log("throwing"); throw "thrown"
 
 var nameIdx = 0
 function getName(){
