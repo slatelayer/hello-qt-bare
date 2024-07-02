@@ -22,8 +22,6 @@ core.recv = function(data) {
 
 core.ready()
 
-console.log("throwing"); throw "thrown"
-
 var nameIdx = 0
 function getName(){
 	const names = [
