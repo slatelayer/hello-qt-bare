@@ -228,9 +228,6 @@ int main(int argc, char *argv[]) {
       assert(err == 0);
     }
 
-    //err = bare_run(bare, "be/runtime.js", NULL);
-    //assert(err == 0);
-
     err = bare_run(bare, "be/main.js", NULL);
     assert(err == 0);
 
