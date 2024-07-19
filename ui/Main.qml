@@ -8,8 +8,10 @@ import "core.mjs" as C
 Window {
     id: window
     color: "#050505"
-    visibility: Window.FullScreen
     visible: true
+    visibility: normal
+    width: 720
+    height: 720
 
     Label {
         id: title
